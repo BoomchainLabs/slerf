@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://slerf-api.boomchainlab.com/api/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "http://chonk.blog",
+      "destination": "https://chonk.blog",
+      "permanent": true
+    }
+  ]
+}
