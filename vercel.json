@@ -1,15 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "chonk.blog"
+        }
+      ],
+      "destination": "https://chonk.blog",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://slerf-api.boomchainlab.com/api/$1"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "http://chonk.blog",
-      "destination": "https://chonk.blog",
-      "permanent": true
+      "destination": "https://slerf.boomchainlab.com/api/$1"
     }
   ]
 }
