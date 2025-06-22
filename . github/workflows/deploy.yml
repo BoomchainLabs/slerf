@@ -1,40 +1,16 @@
-name: Deploy Vue.js App
+name: Deploy to Vercel
 
 on:
   push:
-    branches:
-      - main  # Change this if your deployment branch is different
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: amondnet/vercel-action@v25
         with:
-          node-version: 'lts/*'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Set environment variables
-        run: |
-          echo "VITE_RPC_URL=${{ secrets.RPC_URL }}" >> .env.prod
-          echo "VITE_TOKEN_ADDRESS=${{ secrets.TOKEN_ADDRESS }}" >> .env.prod
-          echo "VITE_DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env.prod
-
-      - name: Build project
-        run: npm run build -- --mode prod
-
-      - name: Deploy to server via SCP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "dist/*"
-          target: "/var/www/slerf.boomchainlab.com"
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
