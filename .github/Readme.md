@@ -1,6 +1,6 @@
 # 🐸 $SLERF Token Protocol
 
-![Slerf Banner](https://i.imgur.com/QglUVfb.jpg)
+![Slerf Banner](https://i.imgur.com/1tzEGkO.jpeg)
 
 > *“Stake. Laugh. Earn. Repeat.”*  
 > $SLERF is a loyalty-first meme token engineered for daily quests, referrals, and cross-platform on-chain engagement.
